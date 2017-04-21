@@ -101,4 +101,52 @@ class CalculationsController < ApplicationController
     render("calculations/word_count.html.erb")
 end
 
+def descriptive_stats_form
+  render("calculations/descriptive_stats_form.html.erb")
+end
+
+def descriptive_stats
+  @numbers = params[:list_of_numbers].gsub(',', '').split.map(&:to_f)
+
+  @sorted_numbers = @numbers.sort
+
+  @count = @numbers.count
+
+  @minimum = @numbers.min
+
+  @maximum = @numbers.max
+
+  @range = @maximum - @minimum
+
+  @median = (@sorted_numbers[(@numbers.count - 1) / 2] + @sorted_numbers[@count / 2]) / 2.0
+
+  @sum = @numbers.sum
+
+  @mean = @sum/@count
+
+  all_diff_squared = []
+  @numbers.each do |num|
+    difference_squared = ((num - @mean) ** 2)
+    all_diff_squared.push(difference_squared)
+  end
+
+  sum_of_squares = all_diff_squared.sum
+  @variance = sum_of_squares/@count
+
+  @standard_deviation = Math.sqrt(@variance)
+
+  repeat_hash = Hash.new(0)
+  @numbers.each do |num|
+    repeat_hash [num] += 1
+  end
+    sorted_hash = repeat_hash.sort_by { |number, repeats| - repeats }
+    most_repeat_array = sorted_hash[0]
+
+  @mode = most_repeat_array[0]
+
+  render("calculations/descriptive_stats.html.erb")
+end
+
+
+
 end
