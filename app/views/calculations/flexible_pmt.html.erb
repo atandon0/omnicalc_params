@@ -1,2 +1,2 @@
 <h1>Flexible Payment</h1>
-<p> A <%= @number_of_years %> year loan of $<%= @present_value %>, with an annual interest rate of <%= @percent %>%, requires a monthly payment of <%= @monthly_pmt %>.
+<p> A <%=(@number_of_years) %> year loan of <%= number_to_currency(@present_value) %>, with an annual interest rate of <%= number_to_percentage(@percent) %>, requires a monthly payment of <%= number_to_currency(@monthly_pmt) %>.

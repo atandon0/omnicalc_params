@@ -1,0 +1,22 @@
+<h1> Payment Results </h1>
+
+<div>
+<h4> APR </h4>
+<p1> <%= number_to_percentage(@percent) %> </p1>
+</div>
+
+
+<div>
+<h4> Number of Years </h4>
+<p1> <%= @number_of_years %> </p1>
+</div>
+
+<div>
+<h4> Principal </h4>
+<p1> <%= number_to_currency(@present_value) %> </p1>
+</div>
+
+<div>
+<h4> Payment </h4>
+<p1> <%= number_to_currency(@monthly_pmt) %> </p1>
+</div>
