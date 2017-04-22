@@ -58,7 +58,7 @@ class CalculationsController < ApplicationController
   def payment
     @percent = params[:apr].to_f
     @percent_decimal_months = (@percent/100)/12
-    @number_of_years = (params[:years].to_f).round()
+    @number_of_years = (params[:years].to_f)
     @periods = @number_of_years*12
     @present_value = (params[:principal].to_f).round(2)
     @discount_factor = (((1+@percent_decimal_months)**@periods)-1)/(@percent_decimal_months*(1+@percent_decimal_months)**@periods)

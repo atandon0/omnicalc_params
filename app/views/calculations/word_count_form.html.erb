@@ -1,16 +1,72 @@
-<h1>Word Count Calculation</h1>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
 
+<!-- Target 1  -->
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Part I Targets <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="http://localhost:3000/flexible/square/5">Flexible Square Example</a></li>
+            <li><a href="http://localhost:3000/flexible/square_root/100">Flexible Square Root Example</a></li>
+            <li><a href="http://localhost:3000/flexible/payment/410/30/500000">Flexible Payment Example</a></li>
+            <li><a href="http://localhost:3000/flexible/random/20/30">Flexible Random Example</a></li>
+          </ul>
+        </li>
 
+<!-- Target 2  -->
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Part II Targets <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="http://localhost:3000/square/new">Square Form</a></li>
+            <li><a href="http://localhost:3000/square_root/new">Square Root Form</a></li>
+            <li><a href="http://localhost:3000/payment/new">Payment Form</a></li>
+            <li><a href="http://localhost:3000/random/new">Random Form</a></li>
+          </ul>
+        </li>
+
+<!-- Target 3  -->
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Part III Targets <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="http://localhost:3000/word_count/new">Word Count Form</a></li>
+            <li><a href="http://localhost:3000/descriptive_statistics/new">Stats Form</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Word Count Calculation</h3>
+  </div>
+  <div class="panel-body">
     <form action="/word_count/results" class="form-horizontal">
 
-      <div>
-        <label>Text</label>
-            <input type = "text" name = "user_text">
+      <div class="form-group">
+        <label for="user_text" class="col-sm-2 control-label">Text</label>
+        <div class="col-sm-10">
+          <textarea name="user_text" class="form-control" rows="3" placeholder="Enter your text" id="user_text"></textarea>
+        </div>
+      </div>
+
+      <div class="form-group">
+          <label for="user_word" class="col-sm-2 control-label">Special Word </label>
+          <div class="col-sm-10">
+            <input name="user_word" type="name" class="form-control" id="user_word" placeholder="Enter a word to count the occurrences of">
+          </div>
         </div>
 
-<div>
-        <label> Special Word</label>
-          <input type = "text" name = "user_word">
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-primary btn-block">Process Text</button>
         </div>
+      </div>
 
-  <button>Process text</button>
+    </form>
+  </div>
+</div>
